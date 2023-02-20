@@ -1,23 +1,34 @@
 import React, { useState } from 'react'
 import { AsyncPaginate } from "react-select-async-paginate"
+import { getCities } from '../api'
 import "./Search.css"
 
-const Search = () => {
-
+const Search = ({ onChangeSearchValue }) => {
     const [searchValue, setSearchValue] = useState("")
 
     const loadOptions = async (inputValue) => {
-        if (!!inputValue) {
+        try {
+            let response = await getCities(inputValue);
+            response = response.data;
+            const options = response.data.map((city) => {
+                return {
+                    label: `${city.name}, ${city.regionCode}`,
+                    value: `${city.latitude} ${city.longitude}`
+                }
+            })
+            return { options }
+        } catch (error) {
+            console.log(error)
+            return {
+                options: []
+            }
 
-        }
-        return {
-            options: []
         }
     }
     const handleChangeSearchInput = (searchValue) => {
         setSearchValue(searchValue)
+        onChangeSearchValue(searchValue)
     }
-    console.log(searchValue)
     return (
         <div className='search'>
             <AsyncPaginate
