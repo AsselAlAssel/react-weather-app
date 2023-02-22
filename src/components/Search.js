@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { AsyncPaginate } from "react-select-async-paginate"
 import { getCities } from '../api/cities'
-import "./Search.css"
+import "./style/Search.css"
 
 const Search = ({ onChangeSearchValue }) => {
     const [searchValue, setSearchValue] = useState("")

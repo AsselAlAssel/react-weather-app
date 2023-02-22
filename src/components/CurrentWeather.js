@@ -1,4 +1,4 @@
-import "./CurrentWeather.css"
+import "./style/CurrentWeather.css"
 
 const CurrentWeather = ({ data, name }) => {
     const { temp, feels_like, humidity, pressure } = data.main
