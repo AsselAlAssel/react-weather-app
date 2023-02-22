@@ -1,9 +1,11 @@
 
+
+
 # React Weather App
 
 This is a simple weather application built with React that uses the [OpenWeatherMap API](https://openweathermap.org/) to fetch current weather data for a given location. The app allows users to search for a location by entering its name in a search input field, and displays the current temperature, weather description, and an icon representing the current weather condition.
 
-The app also features a responsive design that adjusts to different screen sizes, making it easy to use on desktop, tablet, and mobile devices.
+**live demo** [Click here...](https://lustrous-crumble-ada980.netlify.app)
 
 ## Installation
 
