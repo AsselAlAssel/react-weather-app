@@ -1,5 +1,5 @@
 import axios from "axios"
-import { apiKey } from "../constanta";
+import { apiKey } from "../constants";
 
 const GET_CURR_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather';
 const GET_FORECAST_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/forecast';

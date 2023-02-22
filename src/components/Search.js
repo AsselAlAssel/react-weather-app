@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { AsyncPaginate } from "react-select-async-paginate"
-import { getCities } from '../api'
+import { getCities } from '../api/cities'
 import "./Search.css"
 
 const Search = ({ onChangeSearchValue }) => {
@@ -12,7 +12,7 @@ const Search = ({ onChangeSearchValue }) => {
             response = response.data;
             const options = response.data.map((city) => {
                 return {
-                    label: `${city.name}, ${city.regionCode}`,
+                    label: `${city.name} ,${city.regionCode}`,
                     value: `${city.latitude} ${city.longitude}`
                 }
             })
