@@ -3,6 +3,7 @@ import { useQuery } from 'react-query';
 import { getCurrentWeather, getForecastWeather } from './api/weather';
 import './App.css';
 import CurrentWeather from './components/CurrentWeather';
+import Forecast from './components/Forecast';
 import Search from './components/Search';
 
 const commonConfig = (searchValue) => {
@@ -28,6 +29,7 @@ function App() {
         onChangeSearchValue={handleOnChangeSearchValue}
       />
       {!!currentWeather && <CurrentWeather name={searchValue?.label} data={currentWeather} />}
+      {!!forecastWeather && <Forecast forecastData={forecastWeather} />}
     </div >
   );
 }
